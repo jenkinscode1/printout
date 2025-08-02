@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "printout"
+Name = "printout"
 version = "1.1"
 description = "Enhanced print function with automatic logging"
 readme = "README.md"
