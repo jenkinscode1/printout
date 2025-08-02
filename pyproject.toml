@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "printout"
+version = "0.1.0"
+description = "This allows you to print to console and to a file automatically"
+authors = [{ name="Jelani Jenkins", email="jelani@rdata.org" }]
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
