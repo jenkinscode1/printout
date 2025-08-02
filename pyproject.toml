@@ -2,10 +2,9 @@
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-[project]
+[metadata]
 name = "printout"
 version = "1.2"
-metadata_version : 1.2
 description = "Enhanced print function with automatic logging"
 readme = "README.md"
 license = {text = "MIT"}
