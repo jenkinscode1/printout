@@ -11,5 +11,5 @@ license = {text = "MIT"}
 authors = [{ name = "Jelani Jenkins", email = "jj@jenkinscode.com" }]
 requires-python = ">=3.7"
 
-[tool.setuptools.packages.find]
+[tool.setuptools]
 packages = ["printout"]
