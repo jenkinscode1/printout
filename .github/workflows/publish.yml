@@ -6,32 +6,32 @@ on:
       - master  # or "tags: [v*]" if you only want tags
 
 jobs:
-  build-n-publish:
+  build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for Trusted Publishing
+      contents: read
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.x'
 
       - name: Install build tools
         run: |
           python -m pip install --upgrade pip
-          pip install --upgrade setuptools wheel twine
-          pip install build
+          pip install --upgrade build setuptools wheel
 
-      - name: Clean old builds
-        run: rm -rf dist build *.egg-info
-        
+      - name: Clean old artifacts
+        run: |
+          rm -rf build dist *.egg-info
+
       - name: Build package
         run: python -m build
 
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.8.11
-        with:
-          user: __token__
-          password: ${{ secrets.PYPIAPITOKEN }}
+      - name: Publish to PyPI with Trusted Publisher
+        uses: pypa/gh-action-pypi-publish@release/v1
