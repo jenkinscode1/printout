@@ -1,5 +1,4 @@
 # Printout
-
 `printout` is a simple Python library that enhances the built-in `print` function with automatic logging.
 
 ## Features
@@ -8,13 +7,13 @@
 - Defaults to `scriptname_log.log` in the current directory
 
 ## Installation
-```bash
-
-## Example
 pip install printout
 
+## Example
+```
 import printout
 
 printout("Log this to the default file")
 printout("Log this to a custom file", "mylog.txt")
 printout("Log this to a nother file if you want", "error_log.txt")
+```
